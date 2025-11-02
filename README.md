@@ -22,7 +22,7 @@ This project stores expense records in an SQL database and provides a small Pyth
 
 ## 🧱 Tech stack
 - Python 3.8+
-- SQLite (default, zero config) — easily switchable to PostgreSQL/MySQL
-- `sqlite3` or `SQLAlchemy` (example included)
-- Optional: `pandas` (for CSV/export/reporting)
+- MySQL (default, zero config) — easily switchable to PostgreSQL/SQLite
+- `Mysql.connector` and `SQLAlchemy` (example included)
+- `Pandas` and `Matplotlib` (example included) (for CSV/export/reporting/visualization)
 
