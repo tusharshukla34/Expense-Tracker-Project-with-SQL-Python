@@ -96,4 +96,23 @@ select * from categories;
 select c.name,sum(e.amount) as amount from categories c join expenses e on c.category_id = e.category_id group by c.name order by amount desc limit 5;
 
 
+-- Q Avg expenses per category
+
+select c.name as category, avg(e.amount) from categories c join expenses e on c.category_id = e.category_id group by category; 
+
+-- Q what are expense distribution in nov month
+
+select * from categories c join expenses e on c.category_id = e.category_id where expense_date between '2025-11-01' and '2025-11-30';
+
+
+-- Q compare travel expenses month-over-month
+
+select c.name as category,date_format(e.expense_date, '%y-%m') as Month , lead(e.amount)  over (partition by c.name order by e.expense_date)  amount from categories c 
+join expenses e on c.category_id = e.category_id;
+
+
+SELECT 
+    DATE_FORMAT(expense_date, '%Y-%m') AS month,
+    SUM(e.amount) AS total_travel_expense
+FROM expenses e JOIN categories c  ON e.category_id = c.category_id WHERE  c.name = 'Travel' GROUP BY month ORDER BY month;
 
