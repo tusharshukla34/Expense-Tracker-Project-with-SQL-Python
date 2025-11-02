@@ -1,1 +1,1 @@
-# Expense-Tracker-Project-with-SQL-Python
+# Expenses-Tracker-Project-with-SQL-Python
